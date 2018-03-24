@@ -1,0 +1,43 @@
+package ex15_4_Stack;
+
+import java.util.Stack;
+
+/*
+ *Generic 사용
+ *java.lang.Object
+ *	java.util.AbstractCollection<E>
+ *		java.util.AbstractList<E>
+ *			java.util.Vector<E>
+ *				java.util.Stack<E>
+ *스택(Stack) 클래스 : Vector 클래스의 자식 클래스이다.
+ *		1. LIFO(Last In - First Out) 구조
+ *			마지막으로 입력된 자료가 가장 먼저 출력되는 구조
+ *		2. 여러가지 자료형의 Data를 모두 저장할 수 있다.
+ */
+class Stack3_Generics {
+	
+	public static void main(String[] args) {
+		
+		//Stack 객체 생성
+		Stack<String> s = new Stack<String>();
+		System.out.println("비었나요? " + s.empty());	// true - 비었는지 판단
+		
+		// Stack에 값을 넣음
+		s.push("좋아요");
+		s.push("박보검");
+		
+		// Stack의 값을 출력
+		System.out.println("비었나요? " + s.empty());	// false - 비었는지 판단
+		System.out.println("맨 마지막 데이터 : " + s.peek());	//마지막 데이터 가져오기
+		
+		// Stack의 값을 출력
+		while(!s.empty()) {
+			System.out.println("==============");
+			System.out.println("데이터 출력: " + s.pop());
+			System.out.println("남은 데이터 갯수: " + s.size());
+			
+		}
+		System.out.println("비었나요? " + s.empty());	// true - 비었는지 판단
+	}
+
+}
