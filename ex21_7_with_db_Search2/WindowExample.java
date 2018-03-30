@@ -17,25 +17,25 @@ import javax.swing.table.DefaultTableModel;
 public class WindowExample extends JFrame{
 	
 	WindowExample(){
-		super("Âü°¡ÀÚ ¸í´Ü ÇÁ·Î±×·¥");
+		super("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î±×·ï¿½");
 		setPreferredSize(new Dimension(500, 300));
 		setLocation(500, 400);
 		Container contentPane = getContentPane();
 		
-		String[] colNames = {"¹øÈ£", "ÀÌ¸§", "³ªÀÌ", "¼ºº°"};
+		String[] colNames = {"ï¿½ï¿½È£", "ï¿½Ì¸ï¿½", "ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½"};
 		
 		Object[][] data;
 		
-//		JdbcEx7 je = new JdbcEx7();
-//		data = je.infoinsert();
-		
+		JdbcEx7 je = new JdbcEx7();
+		data = je.infoSelect();
+
 		DefaultTableModel model = new DefaultTableModel(colNames, 0);
 		
 		JTable table = new JTable(model);
 		
-//		for(int i = 0; i < data.length; i++) {
-//			model.addRow(data);
-//		}
+		for(int i = 0; i < data.length; i++) {
+			model.addRow(data);
+		}
 		
 		JScrollPane scroll = new JScrollPane(table);
 		
@@ -45,7 +45,7 @@ public class WindowExample extends JFrame{
 		JPanel panel = new JPanel();
 		
 		JTextField input = new JTextField(20);
-		JButton search = new JButton ("°Ë»ö¾î");
+		JButton search = new JButton ("ï¿½Ë»ï¿½ï¿½ï¿½");
 		JComboBox<String> combo = new JComboBox<String>(colNames);
 		
 		jp.add(combo);
@@ -60,9 +60,9 @@ public class WindowExample extends JFrame{
 		JTextField ageText = new JTextField(3);
 		JTextField sexText = new JTextField(2);
 		
-		JButton addButton = new JButton("Ãß°¡");
-		JButton delButton = new JButton("»èÁ¦");
-		JButton updButton = new JButton("¼öÁ¤");
+		JButton addButton = new JButton("ï¿½ß°ï¿½");
+		JButton delButton = new JButton("ï¿½ï¿½ï¿½ï¿½");
+		JButton updButton = new JButton("ï¿½ï¿½ï¿½ï¿½");
 		
 		panel.add(nameLabel);
 		panel.add(nameText);
