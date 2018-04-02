@@ -14,16 +14,14 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
-import ex21_7_with_db_Search_professor.SearchActionListener;
-
 public class WindowExample extends JFrame{
 	WindowExample(){
-		super("Âü°¡ÀÚ ¸í´Ü ÇÁ·Î±×·¥");
+		super("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î±×·ï¿½");
 		setPreferredSize(new Dimension(500, 300));
 		setLocation(500, 400);
 		Container contentPane = getContentPane();
 		
-		String[] colNames = {"¹øÈ£", "ÀÌ¸§", "³ªÀÌ", "¼ºº°"};
+		String[] colNames = {"ï¿½ï¿½È£", "ï¿½Ì¸ï¿½", "ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½"};
 	    
 	    Object[][] data;
 		
@@ -46,20 +44,20 @@ public class WindowExample extends JFrame{
 		JPanel jp = new JPanel();
 		JPanel panel = new JPanel();
 		
-		JLabel nameLabel = new JLabel("ÀÌ¸§");
-		JLabel ageLabel = new JLabel("³ªÀÌ");
-		JLabel sexLabel = new JLabel("¼ºº°");
+		JLabel nameLabel = new JLabel("ï¿½Ì¸ï¿½");
+		JLabel ageLabel = new JLabel("ï¿½ï¿½ï¿½ï¿½");
+		JLabel sexLabel = new JLabel("ï¿½ï¿½ï¿½ï¿½");
 		
 		JTextField nameText = new JTextField(6);
 		JTextField ageText = new JTextField(3);
 		JTextField sexText = new JTextField(2);
 		
-		JButton addButton = new JButton("Ãß°¡");
-		JButton delButton = new JButton("»èÁ¦");
-		JButton updButton = new JButton("¼öÁ¤");
+		JButton addButton = new JButton("ï¿½ß°ï¿½");
+		JButton delButton = new JButton("ï¿½ï¿½ï¿½ï¿½");
+		JButton updButton = new JButton("ï¿½ï¿½ï¿½ï¿½");
 		
 		JTextField input = new JTextField(20);
-	    JButton search = new JButton("°Ë»ö¾î");
+	    JButton search = new JButton("ï¿½Ë»ï¿½ï¿½ï¿½");
 	    JComboBox<String> combo = new JComboBox<String>(colNames);
 	    
 	    jp.add(combo);

@@ -13,7 +13,7 @@ create table minfo(
 select * from minfo;
 
 insert into minfo
-values(minfo_seq.nextval, 'È«±æµ¿', 21, '³²');
+values(minfo_seq.nextval, 'È«ï¿½æµ¿', 21, 'ï¿½ï¿½');
 
 select minfo_seq.currval from dual;
 
@@ -21,7 +21,7 @@ select * from minfo
 where name like '%È«%';
 
 select * from minfo
-where gender like '%¿©%';
+where gender like '%ï¿½ï¿½%';
 
 select *
 from MINFO

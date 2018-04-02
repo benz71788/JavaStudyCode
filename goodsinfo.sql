@@ -15,9 +15,9 @@ insert into goodsinfo
 values('10003', 'Disital Camera', 210000, 'Samsung');
 
 insert into goodsinfo
-values('10004', 'ÀüÀÚ»çÀü', 180000, '¾ÆÀÌ¸®¹ö');
+values('10004', 'ï¿½ï¿½ï¿½Ú»ï¿½ï¿½ï¿½', 180000, 'ï¿½ï¿½ï¿½Ì¸ï¿½ï¿½ï¿½');
 
 insert into goodsinfo
-values('10005', 'º®°ÉÀÌ ¿¡¾îÄÁ', 400000, '»ï¼º');
+values('10005', 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½', 400000, 'ï¿½ï¼º');
 
 select * from goodsinfo;

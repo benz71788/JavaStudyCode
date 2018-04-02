@@ -17,12 +17,12 @@ import javax.swing.table.DefaultTableModel;
 public class WindowExample extends JFrame{
 	
 	WindowExample(){
-		super("������ ��� ���α׷�");
+		super("참가자 명단 프로그램");
 		setPreferredSize(new Dimension(500, 300));
 		setLocation(500, 400);
 		Container contentPane = getContentPane();
 		
-		String[] colNames = {"��ȣ", "�̸�", "����", "����"};
+		String[] colNames = {"번호", "이름", "나이", "성별"};
 		
 		Object[][] data;
 		
@@ -34,18 +34,18 @@ public class WindowExample extends JFrame{
 		JTable table = new JTable(model);
 		
 		for(int i = 0; i < data.length; i++) {
-			model.addRow(data);
+			model.addRow(data[i]);
 		}
 		
-		JScrollPane scroll = new JScrollPane(table);
+		JScrollPane scrollPane = new JScrollPane(table);
 		
-		contentPane.add(scroll, BorderLayout.CENTER);
+		contentPane.add(scrollPane, BorderLayout.CENTER);
 		
 		JPanel jp = new JPanel();
 		JPanel panel = new JPanel();
 		
 		JTextField input = new JTextField(20);
-		JButton search = new JButton ("�˻���");
+		JButton search = new JButton ("검색");
 		JComboBox<String> combo = new JComboBox<String>(colNames);
 		
 		jp.add(combo);
@@ -60,9 +60,9 @@ public class WindowExample extends JFrame{
 		JTextField ageText = new JTextField(3);
 		JTextField sexText = new JTextField(2);
 		
-		JButton addButton = new JButton("�߰�");
-		JButton delButton = new JButton("����");
-		JButton updButton = new JButton("����");
+		JButton addButton = new JButton("추가");
+		JButton delButton = new JButton("삭제");
+		JButton updButton = new JButton("수정");
 		
 		panel.add(nameLabel);
 		panel.add(nameText);

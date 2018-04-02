@@ -9,12 +9,12 @@ public class ConnUtil {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 		} catch(ClassNotFoundException cnfe) {
-			System.out.println("ÇØ´ç Å¬·¡½º¸¦ Ã£À» ¼ö ¾ø´Ù." + cnfe.getMessage());
+			System.out.println("ï¿½Ø´ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½." + cnfe.getMessage());
 		}
 	}
+	
 	public static Connection getConnection() throws SQLException{
-		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+		String url = "jdbc:oracle:thin:@localhost:1521:orcl";
 		return DriverManager.getConnection(url, "scott", "tiger");
 	}
-
 }
