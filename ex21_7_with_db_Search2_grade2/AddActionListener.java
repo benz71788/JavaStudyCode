@@ -23,8 +23,27 @@ public class AddActionListener implements ActionListener{
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		
+		String[] data = new String[5];
+		data[1] = nameText.getText();
+		data[2] = korText.getText();
+		data[3] = engText.getText();
+		data[4] = mathText.getText();
+		
+		JdbcEx8 je = new JdbcEx8();
+		data[0] = String.valueOf(je.infoInsert(data));
+		
+		Object[][] arr = je.infoSelect();
+		
 		DefaultTableModel model = (DefaultTableModel) table.getModel();
 		
+		int row = table.getRowCount();
+
+		model.addRow(arr[row]);
+		nameText.setText("");
+		korText.setText("");
+		engText.setText("");
+		mathText.setText("");
 	}
 
 }

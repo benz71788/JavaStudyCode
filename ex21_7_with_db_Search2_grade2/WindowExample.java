@@ -30,10 +30,10 @@ public class WindowExample extends JFrame{
 		
 		DefaultTableModel model = new DefaultTableModel(colNames, 0);
 		
-		JTable table = new JTable();
+		JTable table = new JTable(model);
 		
 		for(int i = 0; i < data.length; i++) {
-			model.addRow(data);
+			model.addRow(data[i]);
 		}
 		
 		JScrollPane scroll = new JScrollPane(table);
@@ -71,6 +71,9 @@ public class WindowExample extends JFrame{
 		downJp.add(korLabel);
 		downJp.add(korText);
 		
+		downJp.add(engLabel);
+		downJp.add(engText);
+		
 		downJp.add(mathLabel);
 		downJp.add(mathText);
 		
@@ -82,7 +85,7 @@ public class WindowExample extends JFrame{
 		contentPane.add(downJp, BorderLayout.SOUTH);
 		
 		addButton.addActionListener(new AddActionListener(table, nameText, korText, engText, mathText));
-//		delButton.addActionListener(new DelActionListener(table));
+		delButton.addActionListener(new DelActionListener(table));
 //		updButton.addActionListener(new UpdateActionListener(table));
 //		searchButton.addActionListener(new SearchActionListener(table, searchText, combo));
 		
