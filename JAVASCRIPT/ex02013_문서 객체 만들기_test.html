@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Text Node</title>
+	<!-- 
+		문서 객체 만들기(1)
+		document 객체의 노드 생성 메서드
+		createElement(tagName) : 요소 노드를 생성합니다.
+		createTextNode(text) : 텍스트 노드를 생성합니다.
+		
+		문서 객체 연결 메서드
+		- appendChild(node) : 객체에 노드를 연결합니다.
+			예) 부모.appendChild(node) : 부모의 마지막 자식으로 연결합니다.
+	 -->
+	 <script>
+		window.onload = function(){
+			var img = document.createElement('img');
+			img.src = 'Koala.jpg';
+			img.width = 300;
+			img.height = 300;
+			
+			var img2 = document.createElement('img');
+			img2.src = 'Desert.jpg';
+			img2.width = '300';
+			img2.height = '300';
+			
+			document.body.appendChild(img);
+			document.body.appendChild(img2);
+		};
+	 </script>
+</head>
+<body>
+</body>
+</html>

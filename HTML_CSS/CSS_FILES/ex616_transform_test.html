@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>X</title>
+    <style>
+        body {
+            width: inherit;
+            height: 500px;
+        }
+        div.container {
+            position: relative;
+            left: 50%;
+            top: 50%;
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+        div.bar {
+            width: inherit;
+            height: 20px;
+            margin-bottom: 20px;
+            background-color: black;
+        }
+        div.container:hover>div.top {
+            animation: top-bar 1s forwards cubic-bezier(1, 0, 0, 1);
+        }
+        div.container:hover>div.mid {
+            animation: mid-bar 0.5s forwards;
+        }
+        div.container:hover>div.bot {
+            animation: bot-bar 1s forwards cubic-bezier(1, 0, 0, 1);
+        }
+        @keyframes top-bar {
+            50%{transform: translateY(40px)}
+            100%{transform: translateY(40px) rotate(45deg)}
+        }
+        @keyframes mid-bar {
+            100%{visibility: hidden;}
+        }
+        @keyframes bot-bar {
+            50%{transform: translateY(-40px)}
+            100%{transform: translateY(-40px) rotate(-45deg)}
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top bar"></div>
+        <div class="mid bar"></div>
+        <div class="bot bar"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> CSS Access using JavaScript </title>
+</head>
+<body>
+
+<div id="outerBox" style="background: blue; width: 550px; 
+                          height:300px;">
+
+<div id="innerBox"
+     style="background: yellow; width: 450px; height:200px;
+            position: absolute; left: 50px; top: 50px;" >
+
+    <img id="img1" src="image/image1.png" width="100px"
+       style="position: absolute; left: 50px; top: 50px; 
+              visibility: visible;" >
+
+    <img id="img2" src="image/image2.png" width="100px"
+         style="position: absolute; left: 175px; top: 50px; 
+                visibility: visible;" >
+
+    <img id="img3" src="image/image3.png" width="100px"
+         style="position: absolute; left: 300px; top: 50px; 
+                visibility: visible;" >
+</div>
+
+</div>
+
+<script>
+   window.onload = function(){
+	   function visibleChange(img){
+		   var image = document.getElementById(img);
+			if(image.style.visibility == 'visible'){
+				image.style.visibility = 'hidden';
+			} else {
+				image.style.visibility = 'visible';
+			}
+	   }
+	   
+	   var button = document.querySelectorAll('button');
+	   var image = document.querySelectorAll('img');
+	   for(let i=0; i<button.length; i++){
+		   button[i].addEventListener('click',
+				   function(){visibleChange(image[i])});
+	   }
+	   
+   }
+</script>
+
+Toggle Visibility:
+<button>Image 1</button>
+<button>Image 2</button>
+<button>Image 3</button>
+
+</body>
+</html>

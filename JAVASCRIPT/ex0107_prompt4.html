@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>confirm : [확인][취소]버튼이 있는 대화 상자</title>
+	<style>
+		table{margin:0 auto; text-align: center;
+			width: 600px; height: 200px;}
+		caption{font-size:20pt; color:green;
+				font-weight:bold}
+		th{background-color:black; color:white;}
+		tr:nth-child(2n){background-color:green; color:black;}
+		tr:hover{background-color:orange; color:white}
+	</style>
+</head>
+<body>
+	<script>
+		/*
+			아무것도 입력하지 않고 확인을 누르면 dan은 빈문자열이 되고
+			조건식에 사용되면 false가 됩니다.
+		*/
+		var num
+		var bookNum = prompt("주문할 책 수량을 입력 하세요", 1);
+		bookNum = bookNum.trim();
+		var list = "";
+		var book1 = "자바스크리트";
+		var book2 = "HTML";
+		var book3 = "CSS";
+		
+		list += "<table border=1>";
+		list += "<caption> 베스트 셀러 </caption>";
+		list += "<tbody>";
+		list += "<tr>";
+		list += "<th> 순위 </th>";
+		list += "<th> 제목 </th>";
+		list += "</tr>";
+		
+		for(var i = 1; i <= bookNum; i++){
+			var num = prompt("책 제목을 번호로 선택해주세요..\n" 
+					+ "1. 자바스크립트\n" + "2. HTML\n"
+					+ "3. CSS");
+			if(num >= 1 && num <= 3){
+				list += "<tr><td>" + i + "</td>";
+				if(num == 1){
+					list += "<td>" + book1 + "</td></tr>";
+				} else if(num == 2){
+					list += "<td>" + book2 + "</td></tr>";
+				} else if(num == 3){
+					list += "<td>" + book3 + "</td></tr>";
+				}
+			} else {
+				alert("책 제목의 번호를 제대로 선택해주세요.");
+				i--;
+			}
+			
+		}
+		
+		list += "</tbody>";
+		list += "</table>";
+		document.body.innerHTML = list;
+		
+	</script>
+</body>
+</html>

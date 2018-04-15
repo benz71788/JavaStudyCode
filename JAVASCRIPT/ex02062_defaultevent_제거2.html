@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>a태그 디폴트 이벤트 제거하기</title>
+
+		<!-- 
+		디폴트 이벤트: 일부 HTML 태그는 이미 이벤트 리스너가 있습니다.
+					이러한 것을 디폴트 이벤트라고 합니다.
+		예를 들어 a태그는 클릭하면 다른 페이지로 이동하는데 이것이
+		a태그가 가진 디폴트 이벤트입니다.
+		또한 입력 양식의 submit 버튼을 누르면 자동으로 입력 양식을 제출하고 페이지를
+		새로고침하는 것이 디폴트 이벤트입니다.
+		
+		디폴트 이벤트 제거하는 방법
+		1. obj.onsubmit= function(){
+				.....
+				return false;
+			}
+		
+		2. event.preventDefault()를 사용하는 경우
+			<a href="http://www.naver.com"
+				onclick="event.peventDefault()">
+				
+		3. function whenSubmit(){
+				.....
+				return false;
+			}
+			<form onsubmit="return whenSubmit()">
+	 -->
+	 <script>
+
+	 </script>
+</head>
+<body>
+	<h1>a태그 디폴트 이벤트 제거하기</h1>
+	1. onclick="event.preventDefault()" : 현재 발생한 이벤트의 디폴트 행동 취소
+		<a href="http://www.naver.com"
+			onclick="event.preventDefault()">
+		네이버로 이동이 안됩니다.</a><hr>
+	2. onclick="return false" : &lt;a&gt;를 클릭할 때의 default 행동을 취소
+		<a href="http://www.naver.com"
+			onclick="return false">
+		네이버로 이동이 안됩니다.</a>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		/*
+			Date 객체
+			- 컴퓨터에서 제공되는 날짜와 시간을 알아내거나 설정하기 위한 객체
+			- 메서드의 종류
+				getFullYear() - 연도(yyyy)
+				getMonth() - 월(0:1월 ~ 11:12월)
+				getDate() - 일
+				getDay() - 요일(0:일요일 ~ 6:토요일)
+				getHours() - 시간
+				getMinutes() - 분
+				getSeconds() - 초
+				getTime() - 1970년 1월 1일부터 경과된 시간을 밀리초로 구함
+				getMilliseconds() - 밀리초(1/1000초)를 리턴
+				toLocaleString() - 객체의 시간 정보를 local 표현의 문자열로 리턴
+				
+			예) var today = new Date();
+		*/
+		
+		//시스템의 현재 날짜로 초기화된 Date객체를 생성합니다.
+		//var today = new Date(2018, 3, 8, 10, 10, 10);
+
+		var sum = 0;
+		var result = 0;
+		
+		var startDate = new Date();
+		
+		for(var i = 1; i < 1000000; i++){
+			sum = sum + i;
+		}
+		
+		var endDate = new Date();
+		
+		result = endDate.getMilliseconds() - startDate.getMilliseconds();
+		document.write("sum = " + sum + "<br>");
+		document.write("1에서 1000000까지 더하는데 걸린 시간 : " + result + "ms<hr>");
+	</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>navigator</title>
+	<style>
+		caption{font-size: 20pt;
+				font-weight: bolder;
+				padding: 10px}
+		table{margin: 0 auto;
+			text-align:center;
+			width:700px;
+			height: 200px;}
+		p{margin: 0 auto;
+			position: relative;
+			top: 10px;
+			width: 200px}
+		input{text-align: center}
+		tbody>tr+tr{background-color: yellow}
+		tbody>tr>td+td{background-color: white}
+		tfoot>tr>td+td{background-color: green}
+
+	</style>
+	<script>
+		function add(){
+			var book = document.getElementsByName('book');
+			var bookprice = document.getElementsByName('bookprice');
+			var price = document.getElementsByName('price');
+			var bookSum = document.getElementById('bookSum');
+			var bookpriceSum = document.getElementById('bookpriceSum');
+			
+			for(var i = 0; i < book.length; i++){
+				bookprice[i].value = parseInt(book[i].value) * parseInt(price[i].value);
+				bookSum.value = Number(bookSum.value) + parseInt(book[i].value);
+				bookpriceSum.value = Number(bookpriceSum.value) + parseInt(bookprice[i].value);
+			}	
+		}
+	</script>
+</head>
+<body>
+	<form>
+		<table border = '1'>
+			<caption>서적 주문 양식</caption>
+			<tbody>
+				<tr>
+					<th>책 제목</th>
+					<th>가격</th>
+					<th>수량</th>
+					<th>합계</th>
+				</tr>
+				<tr>
+					<td>4차 산업</td>
+					<td><input type="hidden" name="price" value="25000">25,000원</td>
+					<td><input type="text" name="book" value="0"
+							size="3" onclick="this.select();"></td>
+					<td><input type="text" name="bookprice" size="8">원</td>
+				</tr>
+				<tr>
+					<td>다이어트</td>
+					<td><input type="hidden" name="price" value="27000">27,000원</td>
+					<td><input type="text"  name="book" value="0"
+							size="3" onclick="this.select();"></td>
+					<td><input type="text" name="bookprice" size="8">원</td>
+				</tr>
+				<tr>
+					<td>윤식당</td>
+					<td><input type="hidden" name="price" value="25000">25,000원</td>
+					<td><input type="text"  name="book" value="0"
+							size="3" onclick="this.select();"></td>
+					<td><input type="text" name="bookprice" size="8">원</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td>합계</td>
+					<td></td>
+					<td><input type="text" id="bookSum" value="0"
+							 size="3" onclick="this.select();"></td>
+					<td><input type="text" id="bookpriceSum" size="8" onclick="this.select();">원</td>
+				</tr>
+			</tfoot>
+		</table>
+		<p>
+			<input type="button" value="합계계산" onclick="add();">
+			<input type="reset" value="초기화">
+			<input type="submit" value="제출">	
+		</p>
+	</form>
+</body>
+</html>

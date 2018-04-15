@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		
+		var today = new Date();
+		today.setHours(9, 0, 0);	//9시 0분 0초로 기준
+		var diff = 0;
+		
+		var inputDate = prompt("비교할 날짜를 입력하세요.", "2018-04-05");
+		var input = new Date(inputDate);
+		
+		document.write(today.toString() + "<br>");
+		document.write(input.toString() + "<br>");
+		
+		var interval = Math.abs(today.getTime() - input.getTime());
+		
+		diff = Math.floor(interval / (24 * 60 * 60 * 1000));
+		alert("날짜 간격은 " + diff + "일 입니다.");
+	</script>
+</body>
+</html>

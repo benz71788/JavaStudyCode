@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> CSS Access using JavaScript </title>
+</head>
+<body>
+
+<div id="outerBox" style="background: blue; width: 550px; 
+                          height:300px;">
+
+<div id="innerBox"
+     style="background: yellow; width: 450px; height:200px;
+            position: absolute; left: 50px; top: 50px;" >
+
+    <img id="img1" src="image/image1.png" width="100px"
+       style="position: absolute; left: 50px; top: 50px; 
+              visibility: visible;" >
+
+    <img id="img2" src="image/image2.png" width="100px"
+         style="position: absolute; left: 175px; top: 50px; 
+                visibility: visible;" >
+
+    <img id="img3" src="image/image3.png" width="100px"
+         style="position: absolute; left: 300px; top: 50px; 
+                visibility: visible;" >
+</div>
+
+</div>
+
+<script>
+   window.onload = function(){
+	   function visibleChange(obj){
+		   var gt = obj.innerHTML;
+		   //버튼요소의 innerHTML의 문자열 중 마지막에 위치한 숫자를 추출하기 위해
+		   //substr사용
+		   //맨 마지막 위치의 한 글자를 추출('Image 1' -> '1')
+		   var sgt = gt.substr(gt.length-1, 1);
+		   var id = 'img' + sgt;		//'img1'
+		   var image = document.getElementById(id);
+			if(image.style.visibility == 'visible'){
+				image.style.visibility = 'hidden';
+			} else {
+				image.style.visibility = 'visible';
+			}
+	   }
+	   
+	   var button = document.querySelectorAll('button');
+	   for(i=0; i<button.length; i++){
+		   button[i].addEventListener('click',
+				   function(){visibleChange(this)});
+	   }
+   }
+</script>
+
+Toggle Visibility:
+<button>Image 1</button>
+<button>Image 2</button>
+<button>Image 3</button>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>선택자</title> 
+
+	<style>
+
+		li{width: 60px;
+			text-align: center;
+			list-style: none;
+			padding: 20px 20px;
+			float:left;
+			}	
+		li:first-child{border-radius: 10px 0px 0px 10px}
+		li:last-child{border-radius: 0px 10px 10px 0px}
+	 	li:nth-child(2n){background-color:red;}
+		li:nth-child(2n+1){background-color:brown;}
+		p{	clear: left;
+			padding-left: 50px}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>First</li>
+		<li>Second</li>
+		<li>Third</li>
+		<li>Fourth</li>
+		<li>Fifth</li>
+		<li>Sixth</li>
+		<li>Seventh</li>
+	</ul>
+	<p>나는 꿈툴이 입니다.</p>
+</body>
+</html>

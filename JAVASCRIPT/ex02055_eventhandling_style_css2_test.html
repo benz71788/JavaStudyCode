@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>navigator</title>
+	<style>
+		caption{font-size: 20pt;
+				font-weight: bolder;
+				padding: 10px}
+		table{margin: 0 auto;
+			text-align:center;
+			width:700px;
+			height: 200px;}
+		p{margin: 0 auto;
+			position: relative;
+			top: 10px;
+			width: 200px}
+		input{text-align: center}
+		tbody>tr+tr{background-color: yellow}
+		tbody>tr>td+td{background-color: white}
+		tfoot>tr>td+td{background-color: green}
+
+	</style>
+	<script>
+		function add(){
+			var book = document.getElementsByName('book');
+			var bookprice = document.getElementsByName('bookprice');
+			var price = document.getElementsByClassName('price');
+			var bookSum = document.getElementById('bookSum');
+			var bookpriceSum = document.getElementById('bookpriceSum');
+			
+			/*
+				위 두 문장과 같은 의미의 패턴 사용
+				1. /  /
+				2. ,|원 => , 또는 원
+				3. g:모든 영역, i:대소문자 구분없이
+			*/
+			// price[i] = prices[i].innerHTML.replace(/,|원/g, "")
+
+			var arr = new Array(book.length);
+			
+			for(var i = 0; i < book.length; i++){
+				arr[i] = price[i].innerHTML.split(/,|원/);
+				bookprice[i].value = parseInt(book[i].value) * (parseInt(arr[i][0] + arr[i][1]));
+				//bookSum.value = Number(bookSum.value) + parseInt(book[i].value);
+				//bookpriceSum.value = Number(bookpriceSum.value) + parseInt(bookprice[i].value);
+			}
+			
+			bookSum.value = parseInt(book[0].value) + parseInt(book[1].value) + parseInt(book[2].value);
+			bookpriceSum.value = parseInt(bookprice[0].value) + parseInt(bookprice[1].value) 
+															+ parseInt(bookprice[2].value);
+		}
+	</script>
+</head>
+<body>
+	<form action="ex0115_setInterval_test.html" method="get" oninput="add();">
+		<table border = '1'>
+			<caption>서적 주문 양식</caption>
+			<tbody>
+				<tr>
+					<th>책 제목</th>
+					<th>가격</th>
+					<th>수량</th>
+					<th>합계</th>
+				</tr>
+				<tr>
+					<td>4차 산업</td>
+					<td class='price'>25,000원</td>
+					<td><input type="text" name="book" value="0"
+							size="3" onclick="this.select();"></td>
+					<td><input type="text" name="bookprice" size="8">원</td>
+				</tr>
+				<tr>
+					<td>다이어트</td>
+					<td class='price'>27,000원</td>
+					<td><input type="text"  name="book" value="0"
+							size="3" onclick="this.select();"></td>
+					<td><input type="text" name="bookprice" size="8">원</td>
+				</tr>
+				<tr>
+					<td>윤식당</td>
+					<td class='price'>25,000원</td>
+					<td><input type="text"  name="book" value="0"
+							size="3" onclick="this.select();"></td>
+					<td><input type="text" name="bookprice" size="8">원</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td>합계</td>
+					<td></td>
+					<td><input type="text" id="bookSum" value="0"
+							 size="3" onclick="this.select();"></td>
+					<td><input type="text" id="bookpriceSum" size="8" onclick="this.select();">원</td>
+				</tr>
+			</tfoot>
+		</table>
+		<p>
+			<input type="button" value="합계계산" onclick="add();">
+			<input type="reset" value="초기화">
+			<input type="submit" value="제출">	
+		</p>
+	</form>
+</body>
+</html>

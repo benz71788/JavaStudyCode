@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form method="get" action="result.html">
+		<fieldset>
+			<legend>납품자정보</legend>
+			<ol type="1">
+				<li>납품자명:
+					<input type="text" placeholder="name" required></li><br>
+				<li>email:
+					<input type="email" placeholder="answs@naver.com" required></li><br>
+				<li>홈페이지:
+					<input type="url" placeholder="http://" required></li><br>
+			</ol>
+		</fieldset><br>
+		
+		<fieldset>
+			<legend>납품정보</legend>
+			<ul type="disc">
+				<li>상품명:
+					<input type="text" size="12"
+					list="stock_name" name="stock" required></li><br>
+					<datalist id="stock_name">
+						<option value="dog1004">도그1004</option>
+						<option value="catchicken">고양이치킨</option>
+						<option value="milk">우유</option>
+					</datalist><br>
+				<li>납품수량:
+					<input type="number" min="10" max="100" 
+						step="10" placeholder="최소10이상" required></li><br><br>
+				<li>납품등급:
+					0<input type="range" step="2" min="0" max="10" required>10</li><br>
+				<li>기타사항: <textarea rows="3" cols="20">
+				</textarea></li>
+			</ul>
+		</fieldset><br>
+		<input type="submit" value="send message">
+	</form>
+</body>
+</html>

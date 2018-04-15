@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>z-index로 앞뒤 배치: 큰 수가 앞으로 배치된다.</title>
+	<!-- z-index 속성은 하나의 정수 값을 가질 수 있다.(양수, 음수 모두 가능하다.)
+		이 값은 해당 엘리먼트의 z축 상의 위치를 나타낸다. 기본값(0) -->
+	<style>
+		/*
+			absolute 값을 갖는 요소는 자신의 부모 혹은 조상 요소중에
+			ralative 속성이 있는 것을 찾아 그 객체를
+			좌표의 기준으로 삼습니다.
+			만약 부모 중에 position이 relative 속성이 없으면
+			가장 위의 태그인 body태그를 기준으로 삼습니다.
+		*/
+		body>div{
+			position:relative;
+			width: 400px;
+			height: 200px;
+			border: 3px solid black
+		}
+		.box{
+			position:absolute;
+			width : 100px;
+			height : 100px;
+		}
+
+		.box:nth-child(3n){
+			left: 10px;
+			top: 10px;
+			background-color: red;
+			z-index: 10
+		}
+		
+		.box:nth-child(3n+1){
+			left: 50px;
+			top: 50px;
+			background-color: green;
+			z-index: 5
+		}
+		
+		.box:nth-child(3n+2){
+			left: 90px;
+			top: 90px;
+			background-color: blue;
+		}
+	</style>
+</head>
+<body>
+	<h1>저는 h1태그입니다.</h1>
+	<div>
+		<div class=box></div>
+		<div class=box></div>
+		<div class=box></div>
+	</div>
+	<h1>저는 h1태그입니다.</h1>
+ </body>
+</html>

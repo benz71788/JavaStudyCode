@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		var i = 0;
+		function dateTime(){
+			i++;
+			document.write(i);
+			var today = new Date();
+			var list = today.toLocaleString();
+			document.body.innerHTML = list;
+			if(i == 10){
+				clearTimeout(time);
+			}
+		}
+		
+		 var time = setInterval(dateTime, 1000);
+
+	</script>
+</body>
+</html>

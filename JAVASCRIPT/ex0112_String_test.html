@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<script>
+		var num = prompt("주민번호를 입력하세요?");
+		var list = "";
+		list += "<h3>String 객체의 메소드 활용</h3>";
+		list += "<hr>";
+		if(num.substring(7, 8) == "1" || num.substring(7, 8) == "3"){
+			list += "남자";
+			document.body.style.background = 'blue';
+		} else if(num.substring(7, 8) == "2" || num.substring(7, 8) == "4"){
+			list += "여자";
+			document.body.style.background = 'pink';
+		}
+		
+		document.body.innerHTML = list;
+	</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+		form{margin: 50px auto;
+			width: 300px;
+			text-align:center;}
+		fieldset{border: 2px solid skyblue;}
+		legend{color:green; font-weight:bolder; font-size:20pt}
+		#name{width:175px; height: 20px; margin: 10px;}
+		#email, #password{width: 380px; height: 20px; margin: 10px;}
+		#date{width:114px; height:20px; margin: 5px;}
+		#submit{width:390px; height:40px;
+				background-color: green;
+				font-size:15pt; color:white;}
+		p{float:left; margin: 10px 10px;}
+		input:nth-child(n){border-radius:2px;
+							border: 2px solid green;}	
+	</style>
+</head>
+<body>
+	<form method="post" action="result.html">
+		<fieldset>
+			<legend>입력폼</legend>
+			<input type="text" name="f_name" id="name" placeholder="성" required>
+			<input type="text" name="l_name" id="name" placeholder="이름" required><br>
+			<input type="email" name="email" id="email" placeholder="Email" required><br>
+			<input type="password" name="pw" id="password" placeholder="패스워드" required><br>
+			<input type="password" name="pwc" id="password" placeholder="패스워드확인" required><br>
+			<input type="number" name="month" id="date" min="1" max="12" placeholder="월" required>
+			<input type="number" name="date" id="date" min="1" max="31" placeholder="일" required>
+			<input type="number" name="year" id="date" min="1900" max="2100" placeholder="년도" required><br>
+			<p>
+				성별 : 
+				남자<input type="radio" name="male" id="gender" checked>
+				여자<input type="radio" name="female" id="gender"><br>
+			</p>
+			<input type="submit" value="회원가입" id="submit">
+		</fieldset>
+	</form>
+</body>
+</html>

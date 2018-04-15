@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>날짜 입력 예제</title>
+</head>
+<body>
+	<form method="get" action="result.html">
+		<table width="500">
+			<tr>
+				<td>DATE(연 - 월 - 일)</td>
+				<td>MONTH(연도 - 월)</td>
+				<td>WEEk(연도 - 주)</td>
+			</tr>
+			<tr>
+			<!-- 드롭다운 버튼을 클릭하면 달력이 펼쳐진다.
+				스핀버튼(드롭다운 버튼 왼쪽에 있음)을 클릭하면 날짜를 수정할 수 있다. -->
+				<td><input type="date" name="date"></td>
+				<td><input type="month" name="month"></td>
+				<td><input type="week" name="week"></td>
+			</tr>
+		</table>
+		<input type="submit" value="전송"> &nbsp;
+		<input type="reset" value="취소">
+	</form>
+</body>
+</html>

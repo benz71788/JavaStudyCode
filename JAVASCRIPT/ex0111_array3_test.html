@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+	</style>
+</head>
+<body>
+	<script>
+		var itemlist = ['국수', '계란', '고추장', '김치', '오이'];
+	
+		var output = "<h3>비빔국수 재료</h3><hr>";
+		output += '<ul>';
+		for(var i = 0; i < itemlist.length; i++){
+			output += "<li>" + itemlist[i] + "</li>";
+		}
+		output += "</ul>";
+		document.write(output);
+	</script>
+</body>
+</html>

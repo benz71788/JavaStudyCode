@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>DOM Access</title>
+   <meta charset="UTF-8">
+   <script>
+     window.onclick = function(){
+		var username = document.getElementById('username');
+		alert(username.value);
+		
+		var nameValue = prompt("이름을 작성하세요");
+		
+		username.value = nameValue;
+		username.style.color = 'red';
+		username.style.backgroundColor = 'yellow';
+		username.style.width = '200px';
+		username.style.height = '50px';
+		username.style.fontSize = '30px';
+     }
+	</script>
+</head>
+<body>
+	
+		이름 : <input id="username" type="text"  value="사용자의 이름 :F반" />
+</body>	
+</html>

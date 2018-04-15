@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>트랜지션</title>
+	<!-- 애니메이션 도중의 주요 장면을 중간 상태에 해당하는 키프레임으로 설정하고 난 후 
+		원하는 객체에 이미 작성된 키프레임을 애니메이션으로 지정하면 된다.
+		키프레임의 설정은 @keyframes 규칙으로 작성하며 진행비율은 %나
+		from 및 to로 지정한다. -->
+	<style>
+			
+		@keyframes color{
+			0%{color: green;}
+			20%{color: navy;}
+			40%{color: pink;}
+			60%{color: orange;}
+			80%{color: yellow;}
+			100%{color: magenta;}
+		}
+		
+		/*
+			animation-name: 애니메이션이름(@keyframes의 name 지정);
+			animation-duration: 1회 애니메이션시간;
+			animation-iteration-count: 애니메이션 반복 횟수
+						(숫자 또는 infinite인 경우 무한 반복)
+						
+			위의 문장들을 한번에 작성하면 다음과 같다.
+			animation: 애니메이션이름 시간 반복횟수
+		*/
+		h1{animation: color 5s infinite; position: relative; font-size:100pt}		
+							
+	</style>
+</head>
+<body>
+	<h1>맛있는 점심</h1>
+ </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+		table{width: 400px; height: 200px;
+				margin: 0 auto; text-align: center;}
+		caption{font-size: 20pt; color: green;}
+		th{background-color: pink;}
+		tr+tr:hover{background-color: orange; color: white}
+	</style>
+</head>
+<body>
+	<script>
+		var saram = new Object();//사용자 정의 객체 생성
+		    
+		//생성된 객체에 속성 추가하기
+		saram.name = "나최고";
+		saram.age = 25;
+		saram.ki = 170.2;
+		saram.blood = "A";
+		saram.address = "서울시 강남구";
+	
+       //채우기
+       saram.print = function(){
+    	   document.write("<table border=1>");
+    	   document.write("<caption>신상정보</caption>");
+    	   document.write("<tr>");
+    	   document.write("<th>항목(속성:property)</th>");
+    	   document.write("<th>내용(값:value)</th>");
+       		for(var p in saram){
+       			var chuga = '';
+       			if(typeof(saram[p]) != 'function' && p != 'name'){
+       				switch(p){
+       				case "age":
+       					chuga = '세';
+       					break;
+       				case "ki":
+       					chuga = 'cm';
+       				case "blood":
+       					chuga = '형';
+       				}
+       				document.write("<tr><td>saram." + p + "</td>");
+       				document.write("<td>" + saram[p] + chuga + "</td></tr>");
+       			}	
+       		}
+       		document.write("</table>");
+       	}
+		saram.print();
+
+	</script>
+</body>
+</html>
